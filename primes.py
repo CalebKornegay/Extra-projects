@@ -15,7 +15,8 @@ def is_Prime(n):
     return True
 
 i = 1
-with open("C:\\Users\\Caleb\\primes3.txt", "w") as infile:
+''' Change "Username\\primes.txt" with your desired path'''
+with open("C:\\Users\\Username\\primes.txt", "w") as infile:
     mersennePrime = 2**i - 1
     infile.write(f"Base: {i}  Prime: {mersennePrime}\n")
     while(True):
