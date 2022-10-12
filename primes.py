@@ -14,13 +14,9 @@ def is_Prime(n):
         if(n % i == 0 or n % (i+2) == 0): return False
     return True
 
-i = 1
-''' Change "Username\\primes.txt" with your desired path'''
-with open("C:\\Users\\Username\\primes.txt", "w") as infile:
-    mersennePrime = 2**i - 1
-    infile.write(f"Base: {i}  Prime: {mersennePrime}\n")
-    while(True):
-        if(is_Prime(i)):
+with open("C:\\Users\\Caleb\\mersennes.txt", "w") as outfile:
+    with open("C:\\Users\\Caleb\\OneDrive\\Documents\\knownMersennes.txt", "r") as infile:
+        while(infile):
+            i = int(infile.readline())
             mersennePrime = 2**i - 1
-            infile.write(f"Base: {i}  Prime: {mersennePrime}\n")
-        i += 1
+            outfile.write(f"Base: {i}\tPrime: {mersennePrime}\n")
