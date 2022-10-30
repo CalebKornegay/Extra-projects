@@ -1,15 +1,15 @@
 CC = g++
 CFLAGS = -g -Wall -O0
 
-all: main.o gpacalc.o
-	$(CC) $(CFLAGS) -o gpacalc main.o gpacalc.o
+all: obj/main.o obj/gpacalc.o
+	$(CC) $(CFLAGS) -o bin/gpacalc obj/main.o obj/gpacalc.o
 
-main.o: main.cpp
-	$(CC) -c main.cpp
+obj/main.o: src/main.cpp include/gpacalc.h
+	$(CC) -c -o obj/main.o src/main.cpp
 
-gpacalc.o:
-	$(CC) -c gpacalc.cpp
+obj/gpacalc.o: src/gpacalc.cpp include/gpacalc.h
+	$(CC) -c -o obj/gpacalc.o src/gpacalc.cpp
 
 clean:
-	rm -r *.o 
-	rm gpacalc
+	rm -r obj/*.o 
+	rm bin/gpacalc
