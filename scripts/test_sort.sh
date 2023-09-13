@@ -2,7 +2,7 @@
 g++ -O3 -o gen gen.cpp
 make_files=true
 myArray=("STL" "QSORT" "MERGE" "QUICK")
-if [ -e "/home/ckornega/cs302/proj2/file_1.txt" ] 
+if [ -e "./file_1.txt" ] 
 then
     make_files=false
 else 
